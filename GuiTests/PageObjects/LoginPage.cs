@@ -28,7 +28,7 @@ namespace Tests.PageObjects
         /// <summary>
         /// JQuery selector example
         /// </summary>
-        public IWebElement LoginButton => _driver.FindElementByJQuery("input[name='btnSubmit']");
+        public IWebElement LoginButton => _driver.FindElement(By.CssSelector("input[name='btnSubmit']"));
 
         public void LoginAsAdmin(string baseUrl)
         {
