@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AltoroMutualTests.cs" />
+    <Compile Include="PageObjects\EditUsers.cs" />
     <Compile Include="PageObjects\LoginPage.cs" />
     <Compile Include="PageObjects\MainPage.cs" />
     <Compile Include="PageObjects\RequestGoldVisaPage.cs" />

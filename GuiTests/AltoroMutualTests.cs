@@ -46,11 +46,14 @@ namespace Structura.GuiTests
         public void LoginWithValidCredentialsShouldSucceed()
         {
             // Arrange
+            var expected = true; //Login Success 
+
             // Act
             new LoginPage(_driver).LoginAsAdmin(_baseUrl);
 
             // Assert
-            new MainPage(_driver).GetAccountButton.Displayed.Should().BeTrue();
+            var actual = new MainPage(_driver).GetAccountButton.Displayed;
+            Assert.AreEqual(expected, actual);
         }
 
         [Test]
@@ -65,7 +68,7 @@ namespace Structura.GuiTests
             {
                 var displayed = new MainPage(_driver).GetAccountButton.Displayed; // throws exception if not found
             };
-            a.ShouldThrow<NoSuchElementException>().WithMessage("Could not find element by: By.Id: btnGetAccount");
+            a.ShouldThrow<NoSuchElementException>();
         }
         
         [Test]
@@ -82,7 +85,7 @@ namespace Structura.GuiTests
             // Assert
 
             // Need to wait until the results are displayed on the web page
-            Thread.Sleep(500);
+            Thread.Sleep(500); //Hard sleeps are bad! Don't use them.
             
             page.SuccessMessage.Text.StartsWith(
                 "Your new Altoro Mutual Gold VISA with a $10000 and 7.9% APR will be sent in the mail."

@@ -12,22 +12,11 @@ namespace Tests.PageObjects
         public LoginPage(IWebDriver driver)
         {
             _driver = driver;
-            PageFactory.InitElements(_driver, this);
         }
 
-        [FindsBy(How = How.Id, Using = "AccountLink")]
-        public IWebElement SignInLink { get; set; }
-
-        [FindsBy(How = How.Id, Using = "uid")]
-        public IWebElement UserIdField { get; set; }
-
-        [FindsBy(How = How.Id, Using = "passw")]
-        public IWebElement PasswordField { get; set; }
-
-
-        /// <summary>
-        /// JQuery selector example
-        /// </summary>
+        public IWebElement SignInLink => _driver.FindElement(By.Id("AccountLink"));
+        public IWebElement UserIdField => _driver.FindElement(By.Id("uid"));
+        public IWebElement PasswordField => _driver.FindElement(By.Id("passw"));
         public IWebElement LoginButton => _driver.FindElement(By.CssSelector("input[name='btnSubmit']"));
 
         public void LoginAsAdmin(string baseUrl)

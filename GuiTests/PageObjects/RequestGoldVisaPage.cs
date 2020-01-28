@@ -11,15 +11,11 @@ namespace Structura.GuiTests.PageObjects
         public RequestGoldVisaPage(IWebDriver driver)
         {
             _driver = driver;
-            PageFactory.InitElements(driver, this);
         }
 
         public IWebElement SubmitButton => _driver.FindElement(By.CssSelector("form[name='Credit'] input[type='submit']"));
-
         public IWebElement PasswordField => _driver.FindElement(By.CssSelector("input[name='passwd']"));
-
-        [FindsBy(How = How.Id, Using = "_ctl0__ctl0_Content_Main_lblMessage")]
-        public IWebElement SuccessMessage { get; set; }
+        public IWebElement SuccessMessage => _driver.FindElement(By.Id("_ctl0__ctl0_Content_Main_lblMessage"));
 
         public void PerformRequest()
         {
