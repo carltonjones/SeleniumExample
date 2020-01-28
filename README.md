@@ -14,8 +14,6 @@ the appsetting *DriverToUse* in the app.config file. To run the tests on Interne
 
 ~~Out of the box Selenium supports locating elements using the element id or an xpath selector. The extension method *FindElementByJQuery* has been added to SeleniumExample with which elements can be located using a more versatile JQuery selector. Example:~~
 
-    ~~driver.FindElementByJQuery("input[name='btnSubmit']")~~
-
 Alexander van Trijffel
 
 EDIT: Forked by Carlton Jones for Ministry of Test Demonstration.
