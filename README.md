@@ -19,3 +19,5 @@ Out of the box Selenium supports locating elements using the element id or an xp
 Alexander van Trijffel
 
 EDIT: Forked by Carlton Jones for Ministry of Test Demonstration.
+
+Go here to learn how to run the project - https://github.com/carltonjones/SeleniumExample/wiki/Setting-Up-the-Project!
