@@ -49,7 +49,8 @@ namespace Structura.GuiTests
             var expected = true; //Login Success 
 
             // Act
-            new LoginPage(_driver).LoginAsAdmin(_baseUrl);
+            var page = new LoginPage(_driver);
+            page.LoginAsAdmin(_baseUrl);
 
             // Assert
             var actual = new MainPage(_driver).GetAccountButton.Displayed;
@@ -61,7 +62,8 @@ namespace Structura.GuiTests
         {
             // Arrange
             // Act
-            new LoginPage(_driver).LoginAsNobody(_baseUrl);
+            var page = new LoginPage(_driver);
+            page.LoginAsNobody(_baseUrl);
 
             // Assert
             Action a = () =>
